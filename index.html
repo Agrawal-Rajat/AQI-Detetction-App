@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AQI Monitor</title>
+    <!-- CSS & fonts -->
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- JS libs -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div class="app">
+
+
+
+        <!-- Header -->
+        <header class="header-center">
+            <!-- Toggle + Icon -->
+            <div class="theme-toggle">
+                <div class="toggle-wrapper">
+                    <label class="switch">
+                        <input type="checkbox" id="themeSwitch" />
+                        <span class="slider"></span>
+                    </label>
+                    <span id="themeLabel">🌞</span>
+                </div>
+            </div>
+
+            <img src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png" alt="AQI logo" />
+            <h1>AQI Monitor</h1>
+        </header>
+
+
+
+        <!-- Search -->
+        <section class="search-box">
+            <input id="cityInput" type="text" placeholder="Enter city name…" />
+            <button id="searchBtn">Search</button>
+        </section>
+
+        <!-- Current AQI -->
+        <section id="aqiInfo" class="card">
+            <p>Search a city to view air quality.</p>
+        </section>
+
+        <!-- Pollutants -->
+        <section id="pollutants" class="grid hidden"></section>
+
+        <section class="card" id="pm25ChartSection">
+            <h2>PM2.5 Concentration Level</h2>
+            <canvas id="pm25Chart" height="200"></canvas>
+        </section>
+
+
+        <!-- Forecast Chart -->
+        <section class="card">
+            <h2 style="margin-bottom:0.5rem;">Next 48 h AQI Forecast</h2>
+            <canvas id="aqiChart" height="220"></canvas>
+        </section>
+
+        <!-- Map -->
+        <section class="map-card">
+            <div id="map" style="height:300px;border-radius:14px;"></div>
+        </section>
+
+        <section class="card" id="pollutedList">
+            <h2>🌍 Top 10 Most Polluted Countries</h2>
+            <ul id="mostPolluted"></ul>
+        </section>
+
+        <section class="card" id="cleanList">
+            <h2>🌿 Top 10 Cleanest Countries</h2>
+            <ul id="leastPolluted"></ul>
+        </section>
+
+
+        <footer>
+            <p>Built with ❤️ by Rajat | Data: OpenWeatherMap & WAQI</p>
+        </footer>
+    </div>
+</body>
+
+</html>
