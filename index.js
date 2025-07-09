@@ -9,8 +9,8 @@ const mostPollutedEl = document.getElementById("mostPolluted");
 const leastPollutedEl = document.getElementById("leastPolluted");
 
 /* ── API Keys ─────────────────────────────────────────────── */
-const OWM_KEY = "af14b0eafbd6e1919add4816052c5d46";
-const WAQI_KEY = "f6251f587da5f575cd9cbe82a66b1c8ac19bfda9";
+const OWM_KEY = "";
+const WAQI_KEY = "";
 
 /* ── Leaflet + Chart Globals ─────────────────────────────── */
 let map, cityMarker, stationGroup;
